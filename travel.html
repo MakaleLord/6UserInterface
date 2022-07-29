@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title> Travel wishlist </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>My travel Journal</h1>
+    <div class="container">
+      <h2>I want to go to...</h2>
+      <ul class="places">
+        <li>Japan</li>
+        <li>Korea</li>
+        <li>Germany</li>
+        <li>Dubai</li>
+        </ul>
+      
+      <h2>I've been to...</h2>
+      <ol class="places">
+        <li>Mexico</li>
+        <li>Flordia</li>
+        <li>Canada</li>
+        <li>Detroit</li>
+        </ol>
+      
+
+    </div>
+    <script>
+      var unsplash = "https://source.unsplash.com/400x225/?";
+      var googleMaps = "http://maps.google.com/?q=";
+
+      var listItems = $('.places > li');
+      for (item of listItems) {
+        var place=$(item).text();
+        var url = unsplash + place;
+        var mapLink = googleMaps + place; $(item).append(`<a href="${mapLink}" target="_blank"><img src="${url}"></a>`);
+      }
+      
+      
+    </script>
+  </body>
+</html>
+<script type="application/javascript" src="/share.js"></script>
